@@ -1,21 +1,5 @@
-import { useState } from 'react';
+export default function UserInput({ userInput, onChange }) {
 
-export default function UserInput() {
-  const [userInput, setUserInput] = useState({
-    initialInvestment: 10000,
-    annualInvestment: 1200,
-    expectedReturn: 6,
-    duration: 10,
-  });
-
-  function handleChange(inputIdentifier, newValue) {
-    setUserInput((prevUserInput) => {
-      return {
-        ...prevUserInput,
-        [inputIdentifier]: newValue,
-      };
-    });
-  }
   return (
     <section id='user-input'>
       <div className='input-group'>
@@ -24,9 +8,9 @@ export default function UserInput() {
           <input
             type='number'
             required
-            value={userInput.initialInvestment}
+            value={userInput.initialInvestment  || ''}
             onChange={(event) =>
-              handleChange('initialInvestment', event.target.value)
+              onChange('initialInvestment', event.target.value)
             }
           />
         </p>
@@ -34,10 +18,11 @@ export default function UserInput() {
           <label>Annual Investment</label>
           <input
             type='number'
-            value={userInput.annualInvestment}
+            value={userInput.annualInvestment  || ''}
             required
+            placeholder="Enter a number"
             onChange={(event) =>
-              handleChange('annualInvestment', event.target.value)
+              onChange('annualInvestment', event.target.value)
             }
           />
         </p>
@@ -47,10 +32,10 @@ export default function UserInput() {
           <label>Expected Return</label>
           <input
             type='number'
-            value={userInput.annualInvestment}
+            value={userInput.expectedReturn || ''}
             required
             onChange={(event) =>
-              handleChange('expectedReturn', event.target.value)
+              onChange('expectedReturn', event.target.value)
             }
           />
         </p>
@@ -59,8 +44,8 @@ export default function UserInput() {
           <input
             type='number'
             required
-            value={userInput.duration}
-            onChange={(event) => handleChange('duration', event.target.value)}
+            value={userInput.duration || ''}
+            onChange={(event) => onChange('duration', event.target.value)}
           />
         </p>
       </div>
