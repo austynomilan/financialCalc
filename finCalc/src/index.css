@@ -87,3 +87,40 @@ body {
 .center {
   text-align: center;
 }
+
+
+@media (max-width: 768px) {
+  body{
+    max-width: 100%;
+    padding: 0 5px;
+  }
+  #header img {
+    width: 2rem;
+    height: 2rem;
+  }
+  #header h1 {
+    font-size: .5rem;
+  }
+  #user-input {
+    padding: 1rem;
+    max-width: 24rem;  
+  }
+  .input-group {
+    gap: 1rem;
+  }
+  #user-input label {
+    font-size: 0.25rem;
+  }
+  #result {
+    max-width: 30rem;
+    margin: 1rem auto;
+    padding: .5rem;
+    border-spacing: .5rem;
+  }
+  #result thead {
+    font-size: 0.4rem;
+  }
+  #result tbody {
+    font-size: 0.45rem;
+  }
+}
