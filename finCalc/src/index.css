@@ -64,6 +64,10 @@ body {
   font-size: 1rem;
 }
 
+#user-input input::placeholder{
+  color: #fff;
+}
+
 #result {
   max-width: 50rem;
   margin: 2rem auto;
@@ -118,9 +122,9 @@ body {
     border-spacing: .5rem;
   }
   #result thead {
-    font-size: 0.4rem;
+    font-size: 0.6rem;
   }
   #result tbody {
-    font-size: 0.45rem;
+    font-size: 0.6rem;
   }
 }
